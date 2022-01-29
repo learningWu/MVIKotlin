@@ -1,0 +1,37 @@
+complexity:
+  ComplexMethod:
+    threshold: 15
+    ignoreSingleWhenExpression: true
+    ignoreSimpleWhenEntries: true
+    ignoreNestingFunctions: false
+  LongParameterList:
+    active: false
+  TooManyFunctions:
+    active: false
+
+exceptions:
+  PrintStackTrace:
+    active: false
+  TooGenericExceptionCaught:
+    active: false
+
+formatting:
+  MaximumLineLength:
+    maxLineLength: 140
+
+naming:
+  FunctionNaming:
+    excludes: ['**/test/**', '**/*Test/**']
+    ignoreAnnotated: [ 'Composable' ]
+  MemberNameEqualsClassName:
+    active: false
+
+style:
+  ForbiddenComment:
+    values: ['FIXME:', 'STOPSHIP:']
+  MagicNumber:
+    active: false
+  MaxLineLength:
+    maxLineLength: 140
+  ReturnCount:
+    active: false
