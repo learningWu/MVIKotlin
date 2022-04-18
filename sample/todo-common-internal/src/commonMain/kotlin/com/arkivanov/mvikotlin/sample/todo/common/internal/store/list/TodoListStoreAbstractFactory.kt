@@ -43,6 +43,7 @@ abstract class TodoListStoreAbstractFactory(
         override fun State.reduce(msg: Msg): State =
             when (msg) {
                 is Msg.Loaded -> copy(items = msg.items)
+                // 5. 处理数据成 UIState 渲染界面
                 is Msg.Deleted -> copy(items = items.filterNot { it.id == msg.id })
                 is Msg.DoneToggled -> copy(items = items.update(msg.id) { copy(isDone = !isDone) })
                 is Msg.Added -> copy(items = items + msg.item)

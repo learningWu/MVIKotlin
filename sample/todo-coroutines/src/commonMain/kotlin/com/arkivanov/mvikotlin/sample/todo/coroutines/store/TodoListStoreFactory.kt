@@ -32,6 +32,7 @@ internal class TodoListStoreFactory(
 
         override fun executeIntent(intent: Intent, getState: () -> State) {
             when (intent) {
+                // 3. 收到 Intent
                 is Intent.Delete -> delete(intent.id)
                 is Intent.ToggleDone -> toggleDone(intent.id, getState)
                 is Intent.AddToState -> dispatch(Msg.Added(intent.item))
@@ -41,6 +42,8 @@ internal class TodoListStoreFactory(
         }
 
         private fun delete(id: String) {
+            // 4. 处理 delete 业务逻辑并通知state更新
+            // dispatch 会触发state更新
             dispatch(Msg.Deleted(id))
 
             scope.launch(ioContext) {

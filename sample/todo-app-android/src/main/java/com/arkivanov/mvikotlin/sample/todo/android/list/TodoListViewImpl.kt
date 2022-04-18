@@ -25,6 +25,7 @@ class TodoListViewImpl(root: View) : BaseMviView<Model, Event>(), TodoListView {
                 }
 
                 override fun onItemDeleteClick(id: String) {
+                    // 1. 界面点击删除
                     dispatch(Event.ItemDeleteClicked(id))
                 }
             }

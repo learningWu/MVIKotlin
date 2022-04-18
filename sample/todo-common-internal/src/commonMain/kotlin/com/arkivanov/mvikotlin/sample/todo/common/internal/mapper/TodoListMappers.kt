@@ -14,6 +14,7 @@ val listEventToListIntent: Event.() -> Intent? =
     {
         when (this) {
             is Event.ItemDoneClicked -> Intent.ToggleDone(id = id)
+            // 2. 转换成 Intent 给共享模块处理逻辑
             is Event.ItemDeleteClicked -> Intent.Delete(id = id)
             is Event.ItemClicked -> null
         }
